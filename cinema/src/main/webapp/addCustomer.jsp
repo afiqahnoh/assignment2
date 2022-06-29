@@ -16,12 +16,12 @@
   <a href="ListCustomerController" class="split" >List Customer</a>
 </div>
 
-<form action="AddCustomerController" method="post">
+
 
 
  <br><br><br>
 <div class="container">
-  <form action="/action_page.php">
+  <form action="AddCustomerController" method="post">
  
         <h2>Customer Detail</h2>
 	<p>Please fill in this form.</p>
@@ -102,6 +102,7 @@
       <input type="submit" value="Submit">
     </div>
   </form>
+  </div>
 
 </body>
 </html>

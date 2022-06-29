@@ -53,7 +53,7 @@ public class UpdateCustomerController extends HttpServlet {
 		s.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 		s.setPrice(Double.parseDouble(request.getParameter("price")));
 		s.setDate(Date.valueOf(request.getParameter("date")));
-		s.setCategory(request.getParameter("categroy"));
+		s.setCategory(request.getParameter("category"));
 
 		
 		

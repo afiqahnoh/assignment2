@@ -27,9 +27,9 @@
 			<th>Title</th>
 			<th>Quantity</th>
 			<th>Price</th>
-			
+			<th>Date</th>
 			<th>Category</th>
-			<th>Description</th>
+	
 			<th colspan="3">Action</th>
 		</tr>
 
@@ -67,4 +67,4 @@ function confirmation(id){
 </script>
 
 </body>
-</html>l>
+</html>

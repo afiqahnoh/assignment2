@@ -4,11 +4,7 @@ import java.sql.*;
 import java.util.*;
 import service.db.ConnectionManager;
 import service.model.Customer;
-
-
-import java.util.Date;
-
-
+import java.sql.Date;
 
 public class ServiceDAO {
 	
@@ -31,8 +27,6 @@ public class ServiceDAO {
 		price = cust.getPrice();
 		date = (Date) cust.getDate();
 		category = cust.getCategory();
-
-		
 		
 		try {
 			con = ConnectionManager.getConnection();
@@ -45,7 +39,7 @@ public class ServiceDAO {
 			ps.setString(4, cust.getTitle());
 			ps.setInt(5, cust.getQuantity());
 			ps.setDouble(6, cust.getPrice());
-			ps.setDate(7, (java.sql.Date) cust.getDate());
+			ps.setDate(7,(Date) cust.getDate());
 			ps.setString(8, cust.getCategory());
 			
 			ps.executeUpdate();
@@ -55,9 +49,7 @@ public class ServiceDAO {
 		}catch (Exception e) {
 	          e.printStackTrace();
 	    }
-	}
-	
-	
+	}	
 	public static List<Customer> getAllCustomer(){
 		List<Customer> customers = new ArrayList<Customer>();
 		
@@ -80,8 +72,6 @@ public class ServiceDAO {
 				s.setPrice(rs.getDouble("price"));
 				s.setDate(rs.getDate("date"));
 				s.setCategory(rs.getString("category"));
-				
-				
 				customers.add(s);
 			}
 			con.close();
@@ -101,8 +91,7 @@ public class ServiceDAO {
 			ps.setInt(1,id);
 			
 			rs = ps.executeQuery();
-			
-			
+						
 			if(rs.next()) {
 				s.setId(rs.getInt("id"));
 				s.setName(rs.getString("name"));
@@ -149,7 +138,7 @@ public class ServiceDAO {
 		title = cust.getTitle();
 		quantity = cust.getQuantity();
 		price = cust.getPrice();
-		date = (Date) cust.getDate();
+		date =  (Date) cust.getDate();
 		category = cust.getCategory();
 
 		
@@ -163,11 +152,10 @@ public class ServiceDAO {
 			ps.setString(4,title);
 			ps.setInt(5,quantity);
 			ps.setDouble(6,price);
-			ps.setDate(7, (java.sql.Date) cust.getDate());
+			ps.setDate(7,date);
 			ps.setString(8,category);
 			ps.setInt(9,id);
-			
-			
+					
 			ps.executeUpdate();
 			
 			System.out.println("Successfully updated");
